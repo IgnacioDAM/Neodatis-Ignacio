@@ -5,17 +5,17 @@ public class Jugadores {
 	private String deporte;
 	private String ciudad;
 	private int edad;
+	private Pais pais;
 
 	public Jugadores() {
+	}
 
-	};
-
-	public Jugadores(String nombre, String deporte, String ciudad, int edad) {
-		super();
+	public Jugadores(String nombre, String deporte, String ciudad, int edad, Pais pais) {
 		this.nombre = nombre;
 		this.deporte = deporte;
 		this.ciudad = ciudad;
 		this.edad = edad;
+		this.pais = pais;
 	}
 
 	public String getNombre() {
@@ -49,4 +49,25 @@ public class Jugadores {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	@Override
+	public String toString() {
+		if (pais == null) {
+			return "Nombre: " + nombre + "\nEdad: " + edad + "\nDeporte: " + deporte + "\nCiudad: " + ciudad
+					+ "\nPais: desconocido";
+		} else {
+			return "Nombre: " + nombre + "\nEdad: " + edad + "\nDeporte: " + deporte + "\nCiudad: " + ciudad
+					+ "\nPais: " + pais.getNombrePais();
+		}
+
+	}
+
 }
