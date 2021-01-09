@@ -297,6 +297,7 @@ public class Main {
 
 		IQuery query = new CriteriaQuery(Jugadores.class, criterion);
 		Objects<Jugadores> objects = odb.getObjects(query);
+		
 		System.out.println("Jugadores que tienen 15 o mas años y viven en Madrid");
 		System.out.println("----------------------------------------------------");
 		while (objects.hasNext()) {
@@ -312,6 +313,7 @@ public class Main {
 		query = new CriteriaQuery(Jugadores.class, criterion);
 
 		objects = odb.getObjects(query);
+		
 		System.out.println("Jugadores que juegan al Baloncesto o Tenis y viven en Madrid");
 		System.out.println("----------------------------------------------------");
 		while (objects.hasNext()) {
